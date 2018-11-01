@@ -13,16 +13,8 @@ public:
 public:
 	bool operator == (const Item& s) const { return name == s.name && durability == s.durability; }
 	bool operator != (const Item& s) const { return !operator==(s); }
-	void SetDurability(int setDurability) {
-		durability = setDurability;
-	}
-	void SetName(std::string setName) {
-		name = setName;
-	}
-	void DeleteItem() 
-	{
-		delete this;
-	}
+	void SetDurability(int setDurability);
+	void SetName(String setName);
 	Item() : name("unknown"), durability(1) {}
 	Item(const String& namee, int& durabilityy) : name(namee), durability(durabilityy) {}
 	const String& GetName() const { return name; }

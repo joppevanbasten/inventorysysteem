@@ -11,52 +11,13 @@ using namespace std;
 class Inventory
 {
 public:
+	int inventorySize = 5;
 	list<Item*> itemList;
-	void add(Item * item)
-	{
-		itemList.push_back(item);
-	}
-	void createItem(std::string name, int durability)
-	{
-		Item * g = new Item;
-		g->SetName(name);
-		g->SetDurability(durability);
-		add(g);
-		cout << name << " added, Its durability is " << durability << "\n";
-	}
-	void see(string name) {
-		list<Item*>::iterator it;
-		for (it = itemList.begin(); it != itemList.end(); it++){
-
-			if (name == "fullinventory")
-			cout << (*it)->name << " it has a durability of " << (*it)->durability << "\n";
-			if((*it)->name == name)
-			cout << (*it)->name << " has a durability of "<< (*it)->durability <<  "\n";
-
-		}
-
-	}
-
-	void use(string name) 
-	{
-		list<Item*>::iterator it;
-		for (it = itemList.begin(); it != itemList.end(); it++)
-		{
-			if ((*it)->name == name)
-			{
-			(*it)->durability--;
-			cout << (*it)->name << " now has a durability of " << (*it)->durability << "\n";
-			}
-			if ((*it)->durability <= 0)
-			{
-
-				cout << (*it)->name << " broke " << "\n";
-				delete *it;
-				it = itemList.erase(it);
-			}
-
-		}
-	}
+	void Add(Item * item);
+	void CreateItem(std::string name, int durability);
+	void See(string name);
+	void Use(string name);
+	void Delete(string name);
 	Inventory();
 	~Inventory();
 };

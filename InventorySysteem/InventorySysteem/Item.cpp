@@ -6,7 +6,12 @@
 #include <iostream>
 #include <sstream>
 
-
+void Item::SetDurability(int setDurability) {
+	durability = setDurability;
+}
+void Item::SetName(std::string setName) {
+	name = setName;
+}
 Item::~Item()
 {
 }
