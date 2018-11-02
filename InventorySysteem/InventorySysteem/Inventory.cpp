@@ -9,19 +9,16 @@ void Inventory::Add(Item * item)
 {
 	itemList.push_back(item);
 }
+void Inventory::ChangeSize(int size) {
+	inventorySize = size;
+}
 void Inventory::CreateItem(std::string name, int durability)
 {
-
-	if (itemList.size() < inventorySize) {
 		Item * g = new Item;
 		g->SetName(name);
 		g->SetDurability(durability);
 		Add(g);
 		cout << name << " added, Its durability is " << durability << "\n";
-	}
-	else {
-		cout << "Your inventory is full" << "\n";
-	}
 }
 void Inventory::See(string name) 
 {

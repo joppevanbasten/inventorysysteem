@@ -17,6 +17,7 @@ public:
 	void CreateItem(std::string name, int durability);
 	void See(string name);
 	void Use(string name);
+	void ChangeSize(int size);
 	void Delete(string name);
 	Inventory();
 	~Inventory();
